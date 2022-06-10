@@ -6,16 +6,6 @@ provider "azurerm" {
   client_secret   = var.client_secret
   tenant_id       = var.tenant_id
 }
-
-terraform {
-  backend "azurerm" {
-    resource_group_name  = "NetworkWatcherRG"
-    storage_account_name = "terraformstorage0321"
-    container_name       = "tfsate"
-    key                  = "dev.terraform.tfstate"
-  }
-}
-
 # Create a resource group
 resource "azurerm_resource_group" "rg01" {
   name     = var.resource_group_name_01
